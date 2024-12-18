@@ -17,7 +17,7 @@ const Home: NextPage = () => {
         <div className={styles.videoContainer}>
           <iframe
             className={styles.video}
-            src="https://www.youtube.com/embed/7zBeQezaz4U"
+            src="https://www.youtube.com/embed/vecOs-vfPMc?si=V9PC-sM_VKtKSguJ"
             title="YouTube video player"
             frameBorder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
