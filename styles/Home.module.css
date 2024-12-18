@@ -126,14 +126,13 @@
 }
 
 .videoContainer {
-  position: relative;
   width: 60%;
   height: 400px;
   margin-bottom: 2rem;
+  z-index: 1;  /* 動画コンテナのz-indexを設定 */
 }
 
 .video {
-  position: absolute;
   width: 100%;
   height: 100%;
 }
@@ -161,22 +160,22 @@
     transform: rotate(-10deg) translateX(20px);
   }
 }
-
 /* サンタの画像を配置するためのコンテナ */
 .santaContainer {
-  position: relative;
-  width: 100%;
+  width: 80%;  /* コンテナの幅を制限 */
   height: 100px;
+  overflow: hidden;  /* はみ出た部分を隠す */
+  margin: 0 auto;  /* 中央寄せ */
+  z-index: 2;  /* 動画より大きい値を設定 */
 }
 
 /* サンタの画像 */
 .santaClaus {
-  position: absolute;
-  left: 0;
   width: 100px;
   height: 100px;
   background-image: url('/sa.png');
   background-size: contain;
+  background-position: center;  /* 画像を中央に配置 */
   background-repeat: no-repeat;
   animation: moveSanta 5s infinite;
 }
@@ -184,15 +183,15 @@
 /* サンタが動くアニメーション */
 @keyframes moveSanta {
   0% {
-    left: 0;
+    transform: translateX(0);
     bottom: 10px;
   }
   50% {
-    left: 50%;
+    transform: translateX(calc(50vw - 50px));
     bottom: 50px;
   }
   100% {
-    left: 100%;
+    transform: translateX(calc(100% - 100px));
     bottom: 10px;
   }
 }
